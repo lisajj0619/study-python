@@ -5,17 +5,17 @@
 # 3. 노란색
 # 4. 흰색
 
-# menu = '메뉴의 번호를 입력하세요. \n1.빨간색 \n2. 검은색\n3. 노란색\n4. 흰색\n' #입력 받을 메뉴
-# choice = int(input(menu)) #메뉴에서 번호 입력
-#
-# if choice == 1: #1번을 골랐을 경우
-#     print("red")
-# elif choice == 2: #2번을 골랐을 경우
-#     print("black")
-# elif choice == 3: #3번을 골랐을 경우
-#     print("yellow")
-# else: #4번을 골랐을 경우, 위의 경우가 모두 아니기 때문에 따로 조건식을 쓸 필요가 없다.
-#     print("white")
+menu = '메뉴의 번호를 입력하세요. \n1.빨간색 \n2. 검은색\n3. 노란색\n4. 흰색\n' #입력 받을 메뉴
+choice = int(input(menu)) #메뉴에서 번호 입력
+
+if choice == 1: #1번을 골랐을 경우
+    print("red")
+elif choice == 2: #2번을 골랐을 경우
+    print("black")
+elif choice == 3: #3번을 골랐을 경우
+    print("yellow")
+else: #4번을 골랐을 경우, 위의 경우가 모두 아니기 때문에 따로 조건식을 쓸 필요가 없다.
+    print("white")
 #
 # 사용자가 입력한 번호의 색상을 영어로 출력한다. - 강사님.ver
 title = "색상은 골라주세요!\n"

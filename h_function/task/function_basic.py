@@ -65,24 +65,24 @@
 #
 # print(user_coupon(*pay, coupon=10, count=1))
 
-# pay = [2000, 4000, 6000]
-# def order_info(*args, **kwargs):
-#     pay_list = args
-#     number = len(pay_list) # 주문 금액 개수(길이)
-#     count = kwargs.get('count') #쿠폰 개수
-#
-#     #할인율
-#     discount = float(1 - kwargs.get('coupon')/100)
-#     # discount = int(kwargs.get('coupon')) / 100
-#
-#     # 할인된 금액,
-#     # 주문 개수가 쿠폰의 개수보다 적을때 주문 개수 모두에 적용,
-#     # 주문 개수가 쿠폰의 개수보다 많을때 쿠폰 개수만큼 적용
-#     result = [int(round(pay_list[num] * discount)) if num < count else pay_list[num] for num in range(number)]
-#     # result = [int(pay_list[num] - (pay_list[num] * discount)) if num < count else pay_list[num] for num in range(number)]
-#     print(result)
-#
-# order_info(*pay, coupon=50, count=2)
+pay = [2000, 4000, 6000]
+def order_info(*args, **kwargs):
+    pay_list = args
+    number = len(pay_list) # 주문 금액 개수(길이)
+    count = kwargs.get('count') #쿠폰 개수
+
+    #할인율
+    discount = float(1 - kwargs.get('coupon')/100)
+    # discount = int(kwargs.get('coupon')) / 100
+
+    # 할인된 금액,
+    # 주문 개수가 쿠폰의 개수보다 적을때 주문 개수 모두에 적용,
+    # 주문 개수가 쿠폰의 개수보다 많을때 쿠폰 개수만큼 적용
+    result = [int(round(pay_list[num] * discount)) if num < count else pay_list[num] for num in range(number)]
+    # result = [int(pay_list[num] - (pay_list[num] * discount)) if num < count else pay_list[num] for num in range(number)]
+    print(result)
+
+order_info(*pay, coupon=50, count=2)
 
 # def coupon_discount (pay_list, coupon, count):
 #     '''

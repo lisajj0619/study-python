@@ -41,34 +41,48 @@ while True:
             #가격 list에 추가
             price_list.append(int(new_price))
             #오류 메세지를 출력하지 않기 위해 즉시 다음 반복으로 스킵
-            continue
+            continue #성공했을때 오류문이 출력되지 않으려면 continue
         else:
             #입력한 상품명이 기존 상품과 중복되었다면,
             #알맞은 메세지를 result_message에 담아서 소스코드 하단의 일괄처리로 보내기
             result_message = append_error_message
     #수정
     elif choice == 2:
+        #상품명을 입력받는다
         name = input(search_name_message_for_update)
+
+        #입력한 상품명이 기존 상품명과 중복일 경우
         if name in name_list:
+            #새로운 상품명과 가격을 입력한다.
             new_name, new_price = input(update_message).split()
+
+            #...
             if new_name not in name_list:
+
+                #...
                 index = name_list.index(name)
                 name_list[index], price_list[index] = new_name, new_price
                 continue
-            else:
+            else: #수정실패 중복된 상품명
                 result_message = update_error_message2
-        else:
+        else:#수정실패 존재하지 않는 상품명
             result_message = update_error_message1
+
     #삭제
     elif choice == 3:
+        #삭제할 상품명을 입력
         name = input(delete_message)
+
+        #상품명이 기존의 상품명과 중복일 때
         if name in name_list:
+            #입력된 상품명의 인덱스 번호를 찾고
             index = name_list.index(name)
+            #그 인덱스 번호에 해당하는 이름과 가격을 삭제한다.
             del name_list[index]
             del price_list[index]
             continue
 
-        else:
+        else:#삭제 실패 존재하지 않는 상품명
             result_message = delete_error_message
     #검색
     elif choice == 4:
@@ -77,30 +91,38 @@ while True:
         #상품명으로 검색
         if choice == 1:
             name = input(search_name_message)
+
+            #상품이 기존 상품과 중복일 경우
             if name in name_list:
+                #상품의 인덱스 번호 찾기
                 index = name_list.index(name)
                 print(f'{name_list[index]}, {price_list[index]}')
                 continue
-            else:
+            else: #검색 실패 존재하지 않는 상품명
                 result_message = search_name_error_message
         #가격으로 검색
         elif choice == 2:
             price = int(input(search_price_message))
-            min = price * 0.5
-            max = price * 1.5
+            min = price * 0.5 #입력한 가격의 최솟값
+            max = price * 1.5 #입력한 가격의 최댓값
+
+            #입력한 가격이 오차범위 내에 있는 가격list에서 인덱스 번호 검색
             result_index = [price_list.index(i) for i in [price for price in price_list if min <= price <= max]]
 
+            #입력한 가격의 오차범위가 존재할 경우 출력한다
             if len(result_index) != 0:
                 for i in result_index:
                     print(f'{name_list[i]}, {price_list[i]}')
                     continue
-
+            #오차범위가 존재하지 않을경우 에러 메세지 출력
             else:
                 result_message = search_error_message
         #목록
         elif choice == 5:
+            #상품list가 없을 경우
             if len(name_list) == 0:
                 result_message = no_item_message
+            #상품list가 존재할 경우
             else:
                 for i in range(len(name_list)):
                     print(f'{name_list[i]}, {price_list[i]}')

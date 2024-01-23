@@ -10,10 +10,10 @@ a = 11
 b = 33
 print(a, b)
 
-# temp = a
-# a = b
-# b = temp
-# print(a, b)
+temp = a
+a = b
+b = temp
+print(a, b)
 
 a, b = b, a
 print(a, b)
@@ -92,21 +92,21 @@ formatting = "%d + %d = %d" % (number1, number2, total)
 print(formatting)
 
 # format 함수
-# name = '홍길동'
-# age = 80
-# height = 156.26
-#
-# print('이름: {}\n나이: {}\n키: {:.1f}'.format(name, age, height))
-# print('이름: {1}\n나이: {0}\n키: {2:.1f}'.format(name, age, height))
-# print('이름: {name}\n나이: {age}\n키: {height:.1f}'.format(name=name, age=age, height=height))
-#
-# formatting1 = '이름: {}\n나이: {}\n키: {:.1f}'.format(name, age, height)
-# formatting2 = '이름: {1}\n나이: {0}\n키: {2:.1f}'.format(name, age, height)
-# formatting3 = '이름: {name}\n나이: {age}\n키: {height:.1f}'.format(name=name, age=age, height=height)
-#
-# print(formatting1)
-# print(formatting2)
-# print(formatting3)
+name = '홍길동'
+age = 80
+height = 156.26
+
+print('이름: {}\n나이: {}\n키: {:.1f}'.format(name, age, height))
+print('이름: {1}\n나이: {0}\n키: {2:.1f}'.format(name, age, height))
+print('이름: {name}\n나이: {age}\n키: {height:.1f}'.format(name=name, age=age, height=height))
+
+formatting1 = '이름: {}\n나이: {}\n키: {:.1f}'.format(name, age, height)
+formatting2 = '이름: {1}\n나이: {0}\n키: {2:.1f}'.format(name, age, height)
+formatting3 = '이름: {name}\n나이: {age}\n키: {height:.1f}'.format(name=name, age=age, height=height)
+
+print(formatting1)
+print(formatting2)
+print(formatting3)
 
 # 실습
 # 아래 메세지를 format함수를 사용하여 출력한다.
@@ -130,14 +130,14 @@ react_formatting = 'Hello {kor}, {eng} is fantastic !'.format(kor=react_kor, eng
 print(python_formatting, django_formatting, react_formatting, sep='\n')
 
 # format string
-# name = '박유진'
-# age = 20
-# height = 156.26
+name = '박유진'
+age = 20
+height = 156.26
 
 # round(실수값, 반올림 자리수)
-# print(f'이름: {name}')
-# print(f'나이: {age}살')
-# print(f'키: {round(height, 1)}')
+print(f'이름: {name}')
+print(f'나이: {age}살')
+print(f'키: {round(height, 1)}')
 
 # 실습
 # 아래 메세지를 format함수를 사용하여 출력한다.
